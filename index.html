@@ -134,22 +134,37 @@
       overflow: hidden;
     }
 
-    .pill::before {
-      content: "";
-      position: absolute;
-      width: 10px;
-      height: 10px;
-      border-radius: 999px;
-      background: var(--primary-red);
-      left: 8px;
-      top: 50%;
-      transform: translateY(-50%);
-      animation: pulseDot 1.8s infinite ease-out;
-    }
+   .pill {
+  padding: 6px 12px;
+  border-radius: var(--radius-pill);
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  border: 1px solid var(--primary-blue-soft);
+  color: var(--primary-blue);
+  background: var(--primary-blue-soft);
 
-    .pill span {
-      margin-left: 16px;
-    }
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  white-space: nowrap;
+}
+
+.pill-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--primary-red);
+  flex-shrink: 0;
+  animation: pulseDot 1.8s infinite ease-out;
+}
+
+@keyframes pulseDot {
+  0%   { transform: scale(1); opacity: 1; }
+  70%  { transform: scale(1.5); opacity: 0; }
+  100% { transform: scale(1.5); opacity: 0; }
+}
+
 
     @keyframes pulseDot {
       0% { transform: translateY(-50%) scale(1); opacity: 1; }
@@ -675,7 +690,11 @@
       </div>
 
       <div class="nav-right">
-        <div class="pill"><span>Currently serving · Bengaluru</span></div>
+       <div class="pill">
+  <div class="pill-dot"></div>
+  <span>Currently serving · Bengaluru</span>
+</div>
+
         <button class="nav-cta" onclick="scrollToContact()">
           List or Buy a PG
         </button>
