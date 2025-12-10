@@ -700,53 +700,53 @@
 
     /* HAMBURGER + MOBILE MENU */
 
-    .sb-hamburger {
-      position: fixed;
-      top: 16px;
-      right: 16px;
-      width: 32px;
-      height: 28px;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      padding: 6px 4px;
-      background: #ffffffdd;
-      border-radius: var(--radius-pill);
-      border: 1px solid var(--primary-red);
-      cursor: pointer;
-      z-index: 1001;
-    }
+   /* HAMBURGER BUTTON — LEFT SIDE WITH BLACK LINES */
+.sb-hamburger {
+  position: fixed;
+  top: 16px;
+  left: 16px; /* moved to left */
+  width: 32px;
+  height: 28px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 6px 4px;
+  background: #ffffffdd;
+  border-radius: var(--radius-pill);
+  border: 1px solid #000; /* black border */
+  cursor: pointer;
+  z-index: 1001;
+}
 
-    .sb-hamburger span {
-      display: block;
-      height: 2px;
-      border-radius: 999px;
-      background: var(--primary-red);
-    }
+.sb-hamburger span {
+  display: block;
+  height: 2px;
+  border-radius: 999px;
+  background: #000; /* black lines */
+}
 
-    .sb-mobile-menu {
-      position: fixed;
-      top: 0;
-      right: 0;
-      width: 260px;
-      height: 100vh;
-      background: #ffffff;
-      box-shadow: -4px 0 16px rgba(0,0,0,0.12);
-      padding: 80px 24px 24px;
-      display: flex;
-      flex-direction: column;
-      gap: 16px;
-      transform: translateX(100%);
-      transition: transform 0.25s ease-out;
-      z-index: 1000;
-    }
 
-    .sb-mobile-menu a {
-      text-decoration: none;
-      font-size: 16px;
-      font-weight: 500;
-      color: #222;
-    }
+   .sb-mobile-menu {
+  position: fixed;
+  top: 0;
+  left: 0; /* moved from right to left */
+  width: 260px;
+  height: 100vh;
+  background: #ffffff;
+  box-shadow: 4px 0 16px rgba(0,0,0,0.12); /* shadow flips direction */
+  padding: 80px 24px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  transform: translateX(-100%); /* hide to LEFT instead of right */
+  transition: transform 0.25s ease-out;
+  z-index: 1000;
+}
+
+.sb-mobile-menu.sb-open {
+  transform: translateX(0); /* slide from left */
+}
+
 
     .sb-mobile-menu a:hover {
       color: var(--primary-red);
