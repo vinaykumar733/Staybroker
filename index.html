@@ -595,60 +595,22 @@
       background: var(--primary-blue-soft);
     }
 
-    form {
-      display: grid;
-      gap: 8px;
-      font-size: 0.84rem;
-      position: relative;
-      z-index: 1;
-    }
-
-    label {
-      font-size: 0.8rem;
-      text-transform: uppercase;
-      letter-spacing: 0.14em;
-      color: var(--text-muted);
-    }
-
-    input,
-    select,
-    textarea {
+    /* Google Form embed */
+    .gform-wrapper {
       width: 100%;
-      padding: 8px 9px;
-      border-radius: 10px;
-      border: 1px solid var(--border-soft);
-      font: inherit;
-      outline: none;
-      transition: border-color 0.16s ease, box-shadow 0.16s ease;
     }
 
-    input:focus,
-    select:focus,
-    textarea:focus {
-      border-color: var(--primary-blue);
-      box-shadow: 0 0 0 1px var(--primary-blue-soft);
+    .gform-iframe {
+      width: 100%;
+      max-width: 100%;
+      height: 750px; /* adjust if needed */
+      border: 0;
     }
 
-    textarea {
-      resize: vertical;
-      min-height: 60px;
-    }
-
-    .form-row-inline {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 8px;
-    }
-
-    @media (max-width: 540px) {
-      .form-row-inline {
-        grid-template-columns: 1fr;
+    @media (max-width: 600px) {
+      .gform-iframe {
+        height: 900px;
       }
-    }
-
-    .form-note {
-      font-size: 0.72rem;
-      color: var(--text-muted);
     }
 
     /* FOOTER */
@@ -830,7 +792,7 @@
         </div>
       </section>
 
-      <!-- CONTACT / LEAD FORM -->
+      <!-- CONTACT / LEAD FORM (GOOGLE FORM EMBED) -->
       <section class="contact anim delay-3" id="contact">
         <div>
           <div class="contact-left-title">Get in touch</div>
@@ -856,70 +818,17 @@
         </div>
 
         <div>
-          <!-- NOTE: Replace action / phone as per your setup -->
-          <form>
-            <div class="form-row-inline">
-              <div>
-                <label for="name">Name</label>
-                <input id="name" type="text" placeholder="Your full name" />
-              </div>
-              <div>
-                <label for="phone">WhatsApp / Phone</label>
-                <input
-                  id="phone"
-                  type="tel"
-                  placeholder="+91 XXXXX XXXXX"
-                  inputmode="tel"
-                />
-              </div>
-            </div>
-
-            <div class="form-row-inline">
-              <div>
-                <label for="role">You are</label>
-                <select id="role">
-                  <option value="">Select</option>
-                  <option value="buyer">Buyer – want to acquire a PG</option>
-                  <option value="seller">Owner – want to sell my PG</option>
-                  <option value="both">Both</option>
-                </select>
-              </div>
-              <div>
-                <label for="budget">Budget / Price range</label>
-                <input
-                  id="budget"
-                  type="text"
-                  placeholder="e.g. ₹1.5–3 Cr"
-                />
-              </div>
-            </div>
-
-            <div>
-              <label for="location">Preferred area</label>
-              <input
-                id="location"
-                type="text"
-                placeholder="e.g. Koramangala, BTM, Kundalahalli..."
-              />
-            </div>
-
-            <div>
-              <label for="details">PG / building details</label>
-              <textarea
-                id="details"
-                placeholder="Beds, current occupancy, building type, any special requirement…"
-              ></textarea>
-            </div>
-
-            <button type="button" class="btn-primary" onclick="fakeSubmit()">
-              Send details to StayBroker
-            </button>
-
-            <p class="form-note">
-              This is a static demo form. Connect it later to Google Forms,
-              WhatsApp API, or your backend.
-            </p>
-          </form>
+          <div class="gform-wrapper">
+            <iframe
+              src="https://docs.google.com/forms/d/e/1FAIpQLSf6TN0Vqe0Pimd1bDJEyHlk-Tvui72CH0UfD_gt0-mUUo0SPA/viewform?embedded=true"
+              class="gform-iframe"
+              frameborder="0"
+              marginheight="0"
+              marginwidth="0"
+            >
+              Loading…
+            </iframe>
+          </div>
         </div>
       </section>
     </main>
@@ -940,12 +849,6 @@
       if (el) {
         el.scrollIntoView({ behavior: "smooth", block: "start" });
       }
-    }
-
-    function fakeSubmit() {
-      alert(
-        "Form clicked.\n\nRight now this is just a static page.\nConnect it to Google Forms or your backend to receive leads."
-      );
     }
 
     document.getElementById("year").textContent =
