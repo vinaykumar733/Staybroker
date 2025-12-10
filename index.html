@@ -2,8 +2,13 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>StayBroker – Connecting PG Owners & Buyers</title>
+  <title>StayBroker – Buy & Sell PG Buildings in Bengaluru | PG Investment Platform</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="StayBroker connects PG investors with PG building owners in Bengaluru. Zero listing fees. Direct deals. Professional mediation for PG property transactions." />
+  <meta name="keywords" content="PG business Bengaluru, buy PG building, sell PG property, PG investment, paying guest accommodation, Bengaluru PG" />
+  <meta property="og:title" content="StayBroker – Connecting PG Owners & Buyers" />
+  <meta property="og:description" content="Buy or sell PG buildings in Bengaluru. Direct owner-to-buyer deals with professional mediation." />
+  <meta property="og:type" content="website" />
   <style>
     :root {
       --primary-red: #f62b38;
@@ -178,6 +183,29 @@
       box-shadow: 0 11px 22px rgba(246, 43, 56, 0.4);
     }
 
+    /* DESKTOP MENU */
+
+    .desktop-menu {
+      display: none;
+      margin-top: 8px;
+      padding: 10px 4px 6px;
+      border-bottom: 1px solid var(--border-soft);
+      justify-content: center;
+      gap: 26px;
+      font-size: 0.86rem;
+    }
+
+    .desktop-menu a {
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--text-muted);
+      font-weight: 500;
+    }
+
+    .desktop-menu a:hover {
+      color: var(--primary-red);
+    }
+
     /* HERO */
 
     .hero {
@@ -270,7 +298,7 @@
       box-shadow: 0 9px 18px rgba(246, 43, 56, 0.35);
     }
 
-    .btn-primary:hover {
+    .btn-primary:hover:not(:disabled) {
       transform: translateY(-1px);
       box-shadow: 0 12px 24px rgba(246, 43, 56, 0.45);
     }
@@ -626,6 +654,28 @@
       box-shadow: 0 0 0 1px var(--primary-blue-soft);
     }
 
+    input.error,
+    select.error,
+    textarea.error {
+      border-color: var(--primary-red);
+    }
+
+    .error-msg {
+      font-size: 0.72rem;
+      color: var(--primary-red);
+      margin-top: 2px;
+    }
+
+    .success-msg {
+      padding: 12px;
+      border-radius: var(--radius-lg);
+      background: #d4edda;
+      color: #155724;
+      border: 1px solid #c3e6cb;
+      font-size: 0.86rem;
+      margin-top: 8px;
+    }
+
     textarea {
       resize: vertical;
       min-height: 60px;
@@ -647,70 +697,207 @@
       font-size: 0.72rem;
       color: var(--text-muted);
     }
+
+    /* HAMBURGER + MOBILE MENU */
+
+    .sb-hamburger {
+      position: fixed;
+      top: 16px;
+      right: 16px;
+      width: 32px;
+      height: 28px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 6px 4px;
+      background: #ffffffdd;
+      border-radius: var(--radius-pill);
+      border: 1px solid var(--primary-red);
+      cursor: pointer;
+      z-index: 1001;
+    }
+
+    .sb-hamburger span {
+      display: block;
+      height: 2px;
+      border-radius: 999px;
+      background: var(--primary-red);
+    }
+
+    .sb-mobile-menu {
+      position: fixed;
+      top: 0;
+      right: 0;
+      width: 260px;
+      height: 100vh;
+      background: #ffffff;
+      box-shadow: -4px 0 16px rgba(0,0,0,0.12);
+      padding: 80px 24px 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      transform: translateX(100%);
+      transition: transform 0.25s ease-out;
+      z-index: 1000;
+    }
+
+    .sb-mobile-menu a {
+      text-decoration: none;
+      font-size: 16px;
+      font-weight: 500;
+      color: #222;
+    }
+
+    .sb-mobile-menu a:hover {
+      color: var(--primary-red);
+    }
+
+    .sb-menu-contact {
+      margin-top: auto;
+      padding-top: 12px;
+      border-top: 1px solid #eee;
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--primary-blue);
+    }
+
+    .sb-mobile-menu.sb-open {
+      transform: translateX(0);
+    }
+
+    /* SHOW / HIDE NAVS */
+
+    @media (min-width: 900px) {
+      .sb-hamburger {
+        display: none;
+      }
+      .desktop-menu {
+        display: flex;
+      }
+    }
+
+    @media (max-width: 899px) {
+      .desktop-menu {
+        display: none;
+      }
+    }
+
     /* Sticky WhatsApp Button */
-.whatsapp-btn {
-  position: fixed;
-  bottom: 22px;
-  right: 22px;
-  width: 54px;
-  height: 54px;
-  background: #25d366;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 8px 22px rgba(0,0,0,0.25);
-  z-index: 99999;
-  cursor: pointer;
-}
+    .whatsapp-btn {
+      position: fixed;
+      bottom: 22px;
+      right: 22px;
+      width: 54px;
+      height: 54px;
+      background: #25d366;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 8px 22px rgba(0,0,0,0.25);
+      z-index: 99999;
+      cursor: pointer;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
 
-.whatsapp-btn img {
-  width: 32px;
-  height: 32px;
-  pointer-events: none;
-}
+    .whatsapp-btn:hover {
+      transform: scale(1.1);
+      box-shadow: 0 10px 28px rgba(0,0,0,0.3);
+    }
 
-/* TESTIMONIALS */
-.testimonials {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 14px;
-  margin-top: 14px;
-}
+    .whatsapp-btn img {
+      width: 32px;
+      height: 32px;
+      pointer-events: none;
+    }
 
-@media (max-width: 840px) {
-  .testimonials {
-    grid-template-columns: 1fr;
-  }
-}
+    /* Loading spinner */
+    .spinner {
+      display: inline-block;
+      width: 14px;
+      height: 14px;
+      border: 2px solid rgba(255,255,255,0.3);
+      border-radius: 50%;
+      border-top-color: #fff;
+      animation: spin 0.6s linear infinite;
+    }
 
-.testimonial-card {
-  padding: 16px 14px;
-  border-radius: var(--radius-lg);
-  background: #ffffff;
-  border: 1px solid var(--border-soft);
-  box-shadow: var(--shadow-soft);
-  transition: transform 0.16s ease, box-shadow 0.16s ease;
-}
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
 
-.testimonial-card:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 16px 26px rgba(0, 0, 0, 0.07);
-  border-color: var(--primary-blue-soft);
-}
+    .btn-primary:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+    }
 
-.testimonial-text {
-  font-size: 0.88rem;
-  color: var(--text-main);
-  margin-bottom: 10px;
-  line-height: 1.5;
-}
+    /* TESTIMONIALS */
+    .testimonials {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 14px;
+    }
 
-.testimonial-author {
-  font-size: 0.8rem;
-  color: var(--primary-blue);
-  font-weight: 600;
-}
+    @media (max-width: 840px) {
+      .testimonials {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .testimonial-card {
+      padding: 16px 14px;
+      border-radius: var(--radius-lg);
+      background: #ffffff;
+      border: 1px solid var(--border-soft);
+      box-shadow: var(--shadow-soft);
+      transition: transform 0.16s ease, box-shadow 0.16s ease;
+    }
+
+    .testimonial-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 16px 26px rgba(0, 0, 0, 0.07);
+      border-color: var(--primary-blue-soft);
+    }
+
+    .testimonial-text {
+      font-size: 0.88rem;
+      color: var(--text-main);
+      margin-bottom: 10px;
+      line-height: 1.5;
+    }
+
+    .testimonial-author {
+      font-size: 0.8rem;
+      color: var(--primary-blue);
+      font-weight: 600;
+    }
+
+    /* FAQ */
+
+    .faq-list {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-top: 10px;
+    }
+
+    .faq-item {
+      padding: 12px 12px;
+      border-radius: var(--radius-lg);
+      background: #ffffff;
+      border: 1px solid var(--border-soft);
+      font-size: 0.86rem;
+    }
+
+    .faq-q {
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+
+    .faq-a {
+      color: var(--text-muted);
+    }
 
     /* FOOTER */
 
@@ -728,6 +915,28 @@
   </style>
 </head>
 <body>
+
+  <!-- HAMBURGER BUTTON (MOBILE NAV) -->
+  <button class="sb-hamburger" aria-label="Toggle navigation">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+
+  <!-- MOBILE SLIDE-OUT MENU -->
+  <nav class="sb-mobile-menu" id="sbMobileMenu">
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#how-it-works">How it Works</a>
+    <a href="#buyers-owners">Buyers &amp; Owners</a>
+    <a href="#success-stories">Success Stories</a>
+    <a href="#faq">FAQ</a>
+
+    <div class="sb-menu-contact">
+      📞 +91 63632 23446
+    </div>
+  </nav>
+
   <div class="page">
     <!-- NAVBAR -->
     <header class="nav anim">
@@ -746,9 +955,19 @@
       </div>
     </header>
 
+    <!-- DESKTOP MENU UNDER HEADER -->
+    <nav class="desktop-menu">
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#how-it-works">How it Works</a>
+      <a href="#buyers-owners">Buyers &amp; Owners</a>
+      <a href="#success-stories">Success Stories</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+
     <!-- HERO -->
     <main>
-      <section class="hero">
+      <section class="hero" id="home">
         <div class="hero-main anim delay-1">
           <div class="hero-tagline-pill">
             PG buildings · buyers & owners only
@@ -781,7 +1000,7 @@
         </div>
 
         <!-- SIDE INFO CARD -->
-        <aside class="hero-side anim delay-2">
+        <aside class="hero-side anim delay-2" id="about">
           <div class="card">
             <div class="card-title">Snapshot</div>
             <div class="card-heading">What StayBroker does</div>
@@ -817,7 +1036,7 @@
       </section>
 
       <!-- HOW IT WORKS -->
-      <section class="section anim delay-2">
+      <section class="section anim delay-2" id="how-it-works">
         <div class="section-header">
           <h2 class="section-title">How StayBroker works</h2>
           <p class="section-sub">
@@ -859,7 +1078,7 @@
       </section>
 
       <!-- BUYERS & SELLERS -->
-      <section class="section anim delay-3">
+      <section class="section anim delay-3" id="buyers-owners">
         <div class="section-header">
           <h2 class="section-title">Who StayBroker is for</h2>
         </div>
@@ -890,37 +1109,62 @@
           </div>
         </div>
       </section>
+
       <!-- TESTIMONIALS -->
-<section class="section anim delay-3">
-  <div class="section-header">
-    <h2 class="section-title">What people say</h2>
-    <p class="section-sub">Real feedback from PG owners and investors who worked with StayBroker.</p>
-  </div>
+      <section class="section anim delay-3" id="success-stories">
+        <div class="section-header">
+          <h2 class="section-title">What people say</h2>
+          <p class="section-sub">Real feedback from PG owners and investors who worked with StayBroker.</p>
+        </div>
 
-  <div class="testimonials">
-    <div class="testimonial-card">
-      <p class="testimonial-text">
-        “StayBroker helped me sell my PG building in 12 days. Buyers were genuine and the process was smooth.”
-      </p>
-      <div class="testimonial-author">— SashiKumarReddy, PG Owner</div>
-    </div>
+        <div class="testimonials">
+          <div class="testimonial-card">
+            <p class="testimonial-text">
+              “StayBroker helped me sell my PG building in 12 days. Buyers were genuine and the process was smooth.”
+            </p>
+            <div class="testimonial-author">— SashiKumarReddy, PG Owner</div>
+          </div>
 
-    <div class="testimonial-card">
-      <p class="testimonial-text">
-        “I wanted to start PG business but didn’t know where to find good properties. StayBroker gave me clear options.”
-      </p>
-      <div class="testimonial-author">— veeraReddy, Investor</div>
-    </div>
+          <div class="testimonial-card">
+            <p class="testimonial-text">
+              “I wanted to start PG business but didn’t know where to find good properties. StayBroker gave me clear options.”
+            </p>
+            <div class="testimonial-author">— veeraReddy, Investor</div>
+          </div>
 
-    <div class="testimonial-card">
-      <p class="testimonial-text">
-        “No fake listings, no time waste. Direct owner coordination. Very professional experience.”
-      </p>
-      <div class="testimonial-author">— G.Shiva, PG Operator</div>
-    </div>
-  </div>
-</section>
+          <div class="testimonial-card">
+            <p class="testimonial-text">
+              “No fake listings, no time waste. Direct owner coordination. Very professional experience.”
+            </p>
+            <div class="testimonial-author">— G.Shiva, PG Operator</div>
+          </div>
+        </div>
+      </section>
 
+      <!-- FAQ -->
+      <section class="section anim delay-3" id="faq">
+        <div class="section-header">
+          <h2 class="section-title">FAQ</h2>
+          <p class="section-sub">
+            Quick answers to common questions about StayBroker for PG buyers and owners.
+          </p>
+        </div>
+
+        <div class="faq-list">
+          <div class="faq-item">
+            <div class="faq-q">Do you charge any fee to list my PG?</div>
+            <div class="faq-a">Listing is free for early users. Fee is only charged when a deal is successfully closed.</div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-q">Do you work with tenants?</div>
+            <div class="faq-a">No. StayBroker only mediates full PG building / business transactions.</div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-q">Which locations do you cover now?</div>
+            <div class="faq-a">We are currently focused on Bengaluru. More cities will be added later.</div>
+          </div>
+        </div>
+      </section>
 
       <!-- CONTACT / LEAD FORM -->
       <section class="contact anim delay-3" id="contact">
@@ -949,7 +1193,7 @@
 
         <div>
           <!-- REAL FORM: sends to your email via FormSubmit -->
-          <form action="https://formsubmit.co/staybroker.help@gmail.com" method="POST">
+          <form id="leadForm" action="https://formsubmit.co/staybroker.help@gmail.com" method="POST">
             <!-- FormSubmit options -->
             <input type="hidden" name="_captcha" value="false" />
             <input type="hidden" name="_subject" value="New StayBroker PG Lead" />
@@ -959,6 +1203,7 @@
               <div>
                 <label for="name">Name</label>
                 <input id="name" name="Name" type="text" placeholder="Your full name" required />
+                <div class="error-msg" id="nameError" style="display:none;">Please enter your name.</div>
               </div>
               <div>
                 <label for="phone">WhatsApp / Phone</label>
@@ -970,6 +1215,7 @@
                   inputmode="tel"
                   required
                 />
+                <div class="error-msg" id="phoneError" style="display:none;">Please enter a valid phone number.</div>
               </div>
             </div>
 
@@ -982,6 +1228,7 @@
                   <option value="Owner – want to sell my PG">Owner – want to sell my PG</option>
                   <option value="Both">Both</option>
                 </select>
+                <div class="error-msg" id="roleError" style="display:none;">Please select an option.</div>
               </div>
               <div>
                 <label for="budget">Budget / Price range</label>
@@ -1013,7 +1260,7 @@
               ></textarea>
             </div>
 
-            <button type="submit" class="btn-primary">
+            <button type="submit" class="btn-primary" id="submitBtn">
               Send details to StayBroker
             </button>
 
@@ -1021,6 +1268,10 @@
               Your details will be sent to StayBroker. We’ll contact you on WhatsApp or call
               with matching PG options.
             </p>
+
+            <div class="success-msg" id="successMsg" style="display:none;">
+              Thank you! Your details have been submitted. We will contact you soon.
+            </div>
           </form>
         </div>
       </section>
@@ -1046,18 +1297,87 @@
 
     document.getElementById("year").textContent =
       new Date().getFullYear().toString();
+
+    // HAMBURGER MENU INTERACTION
+    const sbHamburger = document.querySelector(".sb-hamburger");
+    const sbMenu = document.getElementById("sbMobileMenu");
+
+    if (sbHamburger && sbMenu) {
+      sbHamburger.addEventListener("click", () => {
+        sbMenu.classList.toggle("sb-open");
+      });
+
+      sbMenu.querySelectorAll("a").forEach((link) => {
+        link.addEventListener("click", () => {
+          sbMenu.classList.remove("sb-open");
+        });
+      });
+    }
+
+    // Simple client-side validation + UX (optional; safe for production)
+    const form = document.getElementById("leadForm");
+    const submitBtn = document.getElementById("submitBtn");
+
+    if (form) {
+      form.addEventListener("submit", function (e) {
+        let valid = true;
+
+        const nameInput = document.getElementById("name");
+        const phoneInput = document.getElementById("phone");
+        const roleSelect = document.getElementById("role");
+
+        const nameError = document.getElementById("nameError");
+        const phoneError = document.getElementById("phoneError");
+        const roleError = document.getElementById("roleError");
+
+        // reset
+        [nameInput, phoneInput, roleSelect].forEach(el => el.classList.remove("error"));
+        [nameError, phoneError, roleError].forEach(el => el.style.display = "none");
+
+        if (!nameInput.value.trim()) {
+          valid = false;
+          nameInput.classList.add("error");
+          nameError.style.display = "block";
+        }
+
+        if (!phoneInput.value.trim() || phoneInput.value.trim().length < 8) {
+          valid = false;
+          phoneInput.classList.add("error");
+          phoneError.style.display = "block";
+        }
+
+        if (!roleSelect.value) {
+          valid = false;
+          roleSelect.classList.add("error");
+          roleError.style.display = "block";
+        }
+
+        if (!valid) {
+          e.preventDefault();
+          return;
+        }
+
+        // Optional small UX: disable button & show spinner text
+        submitBtn.disabled = true;
+        submitBtn.innerHTML = '<span class="spinner"></span>&nbsp;Sending...';
+
+        // After formsubmit redirect, this page reloads so no need to re-enable
+      });
+    }
   </script>
+
+  <!-- WhatsApp sticky button -->
   <a
-  href="https://wa.me/916363223446?text=Hi%20I%20am%20interested%20in%20buying%20or%20selling%20a%20PG"
-  class="whatsapp-btn"
-  target="_blank"
-  rel="noopener"
->
-  <img
-    src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg"
-    alt="Chat on WhatsApp"
-  />
-</a>
+    href="https://wa.me/916363223446?text=Hi%20I%20am%20interested%20in%20buying%20or%20selling%20a%20PG"
+    class="whatsapp-btn"
+    target="_blank"
+    rel="noopener"
+  >
+    <img
+      src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg"
+      alt="Chat on WhatsApp"
+    />
+  </a>
 
 </body>
 </html>
