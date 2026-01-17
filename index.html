@@ -41,6 +41,24 @@
 
 
   <style>
+    .footer-social-icons {
+  display: flex;
+  gap: 12px;
+  margin-top: 10px;
+}
+
+.footer-social-icons img {
+  width: 18px;
+  height: 18px;
+  opacity: 0.7;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.footer-social-icons a:hover img {
+  opacity: 1;
+  transform: translateY(-1px);
+}
+
     .footer-strong {
   margin-top: 40px;
   padding: 30px 18px 16px;
@@ -1450,6 +1468,18 @@
         📞 +91 63632 23446<br>
         ✉️ staybroker.help@gmail.com
       </p>
+      <div class="footer-social-icons">
+  <a href="https://www.linkedin.com/company/staybroker" target="_blank" aria-label="StayBroker on LinkedIn">
+    <img src="/icons/linkedin.svg" alt="LinkedIn">
+  </a>
+  <a href="https://www.instagram.com/staybroker" target="_blank" aria-label="StayBroker on Instagram">
+    <img src="/icons/instagram.svg" alt="Instagram">
+  </a>
+  <a href="https://www.facebook.com/staybroker" target="_blank" aria-label="StayBroker on Facebook">
+    <img src="/icons/facebook.svg" alt="Facebook">
+  </a>
+</div>
+
     </div>
 
   </div>
