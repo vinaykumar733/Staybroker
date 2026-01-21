@@ -24,10 +24,8 @@
     font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
     background: #fff;
     color: #111;
-    line-height: 1.6;
   }
 
-  /* HERO */
   .hero {
     min-height: 90vh;
     display: grid;
@@ -83,26 +81,6 @@
     padding: 72px 24px;
   }
 
-  section h2 {
-    font-size: 1.8rem;
-    margin-bottom: 16px;
-  }
-
-  .grid-3 {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px,1fr));
-    gap: 24px;
-    margin-top: 32px;
-  }
-
-  .card {
-    padding: 28px;
-    border-radius: 14px;
-    background: var(--light);
-  }
-
-  .muted { color: var(--muted); }
-
   .areas {
     display: flex;
     flex-wrap: wrap;
@@ -111,10 +89,12 @@
   }
 
   .area {
-    padding: 10px 14px;
+    padding: 12px 16px;
     border-radius: 999px;
     background: #f0f0f3;
-    font-weight: 500;
+    font-weight: 600;
+    text-decoration: none;
+    color: #111;
   }
 
   .final-cta {
@@ -136,12 +116,12 @@
 
   .modal-box {
     background: #fff;
-    width: 100%;
     max-width: 420px;
+    width: 100%;
     border-radius: 16px;
-    padding: 28px;
-    position: relative;
+    padding: 32px;
     text-align: center;
+    position: relative;
   }
 
   .close-btn {
@@ -154,16 +134,15 @@
     cursor: pointer;
   }
 
-  /* WhatsApp button */
   .whatsapp-btn {
     display: block;
     background: var(--whatsapp);
     color: #fff;
-    padding: 14px;
-    border-radius: 10px;
+    padding: 16px;
+    border-radius: 12px;
     text-decoration: none;
-    font-weight: 600;
-    margin: 18px 0;
+    font-weight: 700;
+    margin: 22px 0;
     animation: pulse 2.5s infinite;
   }
 
@@ -175,122 +154,71 @@
 
   .call-link {
     display: block;
-    font-weight: 600;
+    font-weight: 700;
     color: #111;
     text-decoration: none;
-    margin-bottom: 18px;
-  }
-
-  .divider {
-    margin: 18px 0;
-    font-size: 13px;
-    color: #888;
-  }
-
-  .modal-box input {
-    width: 100%;
-    padding: 12px;
-    margin: 8px 0;
+    font-size: 18px;
   }
 </style>
 </head>
 
 <body>
 
-<!-- HERO -->
 <header class="hero">
   <div>
     <h1>PG Buildings for Sale in Bengaluru</h1>
-    <p>
-      StayBroker mediates verified PG business transactions between owners
-      and investors. Full-building PG deals only.
-    </p>
+    <p>Verified PG business transactions between owners and investors.</p>
 
     <div class="hero-actions">
-      <a href="pg-opportunities.html" class="btn-primary">
-        View PG Opportunities
-      </a>
-
-      <button class="btn-secondary" onclick="openModal()">
-        List Your PG for Sale
-      </button>
+      <a href="pg-opportunities.html" class="btn-primary">View PG Opportunities</a>
+      <button class="btn-secondary" onclick="openModal()">List Your PG for Sale</button>
     </div>
   </div>
 </header>
 
-<!-- WHY -->
-<section>
-  <h2>Why Invest in a PG Building in Bengaluru?</h2>
-  <div class="grid-3">
-    <div class="card">
-      <h3>Consistent Demand</h3>
-      <p class="muted">Students and professionals drive high occupancy.</p>
-    </div>
-    <div class="card">
-      <h3>Better Yields</h3>
-      <p class="muted">PG assets outperform standard rentals.</p>
-    </div>
-    <div class="card">
-      <h3>Scalable Business</h3>
-      <p class="muted">Multiple rooms, diversified income.</p>
-    </div>
-  </div>
-</section>
-
-<!-- AREAS -->
 <section>
   <h2>Popular PG Areas in Bengaluru</h2>
   <div class="areas">
-    <span class="area">BTM Layout</span>
-    <span class="area">Whitefield</span>
-    <span class="area">Bellandur</span>
-    <span class="area">Marathahalli</span>
-    <span class="area">HSR Layout</span>
-    <span class="area">Koramangala</span>
-    <span class="area">Halasuru</span>
+    <a href="pg-for-sale-btm-layout.html" class="area">BTM Layout</a>
+    <a href="pg-for-sale-whitefield.html" class="area">Whitefield</a>
+    <a href="pg-for-sale-bellandur.html" class="area">Bellandur</a>
+    <a href="pg-for-sale-marathahalli.html" class="area">Marathahalli</a>
+    <a href="pg-for-sale-hsr-layout.html" class="area">HSR Layout</a>
+    <a href="pg-for-sale-koramangala.html" class="area">Koramangala</a>
+    <a href="pg-for-sale-halasuru.html" class="area">Halasuru</a>
   </div>
 </section>
 
-<!-- FINAL CTA -->
 <div class="final-cta">
-  <h2>Ready to Buy or Sell a PG Building?</h2>
-  <p>Talk directly with the StayBroker team.</p>
+  <h2>Talk to StayBroker</h2>
+  <p>Fastest way to buy or sell a PG building</p>
   <button class="btn-primary" onclick="openModal()">Get in Touch</button>
 </div>
 
-<!-- CONTACT MODAL -->
 <div id="contactModal">
   <div class="modal-box">
     <button class="close-btn" onclick="closeModal()">×</button>
+    <h2>Contact StayBroker</h2>
 
-    <h2>Talk to StayBroker</h2>
-    <p class="muted">Choose how you want to connect</p>
-
-    <!-- WHATSAPP -->
     <a href="https://wa.me/916363223446" target="_blank" class="whatsapp-btn">
       💬 Chat on WhatsApp
     </a>
 
-    <!-- CALL -->
     <a href="tel:+916363223446" class="call-link">
       📞 +91 63632 23446
     </a>
+  </div>
+</div>
 
-    <div class="divider">or leave your details</div>
-
-  
-
-<!-- SCRIPT -->
 <script>
-  function openModal() {
-    document.getElementById('contactModal').style.display = 'grid';
-    document.body.style.overflow = 'hidden';
-  }
-
-  function closeModal() {
-    document.getElementById('contactModal').style.display = 'none';
-    document.body.style.overflow = '';
-  }
+function openModal(){
+  document.getElementById('contactModal').style.display='grid';
+  document.body.style.overflow='hidden';
+}
+function closeModal(){
+  document.getElementById('contactModal').style.display='none';
+  document.body.style.overflow='';
+}
 </script>
 
 </body>
