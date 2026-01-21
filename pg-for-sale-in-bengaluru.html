@@ -6,7 +6,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta name="description"
-      content="Buy or sell PG buildings in Bengaluru. StayBroker mediates verified owner-to-investor PG business transactions. Full-building PG deals only." />
+      content="Buy or sell PG buildings in Bengaluru. StayBroker mediates verified owner-to-investor PG business transactions across major areas like BTM, Whitefield, Bellandur, and more." />
 
 <style>
   :root {
@@ -24,8 +24,10 @@
     font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
     background: #fff;
     color: #111;
+    line-height: 1.6;
   }
 
+  /* HERO */
   .hero {
     min-height: 90vh;
     display: grid;
@@ -81,6 +83,12 @@
     padding: 72px 24px;
   }
 
+  section h2 {
+    font-size: 1.8rem;
+    margin-bottom: 16px;
+  }
+
+  /* AREAS */
   .areas {
     display: flex;
     flex-wrap: wrap;
@@ -97,6 +105,11 @@
     color: #111;
   }
 
+  .area:hover {
+    background: #e6e6eb;
+  }
+
+  /* FINAL CTA */
   .final-cta {
     background: linear-gradient(135deg, #f62b38, #d91f2a);
     color: #fff;
@@ -164,61 +177,79 @@
 
 <body>
 
+<!-- HERO -->
 <header class="hero">
   <div>
     <h1>PG Buildings for Sale in Bengaluru</h1>
-    <p>Verified PG business transactions between owners and investors.</p>
+    <p>
+      StayBroker helps investors and PG owners buy or sell
+      full-building PG businesses across Bengaluru.
+    </p>
 
     <div class="hero-actions">
-      <a href="pg-opportunities.html" class="btn-primary">View PG Opportunities</a>
-      <button class="btn-secondary" onclick="openModal()">List Your PG for Sale</button>
+      <a href="pg-opportunities.html" class="btn-primary">
+        View PG Opportunities
+      </a>
+
+      <button class="btn-secondary" onclick="openModal()">
+        List Your PG for Sale
+      </button>
     </div>
   </div>
 </header>
 
+<!-- AREAS -->
 <section>
   <h2>Popular PG Areas in Bengaluru</h2>
   <div class="areas">
-    <a href="pg-for-sale-btm-layout.html" class="area">BTM Layout</a>
-    <a href="pg-for-sale-whitefield.html" class="area">Whitefield</a>
-    <a href="pg-for-sale-bellandur.html" class="area">Bellandur</a>
-    <a href="pg-for-sale-marathahalli.html" class="area">Marathahalli</a>
-    <a href="pg-for-sale-hsr-layout.html" class="area">HSR Layout</a>
-    <a href="pg-for-sale-koramangala.html" class="area">Koramangala</a>
-    <a href="pg-for-sale-halasuru.html" class="area">Halasuru</a>
+    <a href="pg-for-sale-in-btm-layout.html" class="area">BTM Layout</a>
+    <a href="pg-for-sale-in-whitefield.html" class="area">Whitefield</a>
+    <a href="pg-for-sale-in-bellandur.html" class="area">Bellandur</a>
+    <a href="pg-for-sale-in-marathahalli.html" class="area">Marathahalli</a>
+    <a href="pg-for-sale-in-hsr-layout.html" class="area">HSR Layout</a>
+    <a href="pg-for-sale-in-koramangala.html" class="area">Koramangala</a>
+    <a href="pg-for-sale-in-halasuru.html" class="area">Halasuru</a>
   </div>
 </section>
 
+<!-- FINAL CTA -->
 <div class="final-cta">
   <h2>Talk to StayBroker</h2>
-  <p>Fastest way to buy or sell a PG building</p>
+  <p>Fastest way to buy or sell a PG building in Bengaluru</p>
   <button class="btn-primary" onclick="openModal()">Get in Touch</button>
 </div>
 
+<!-- CONTACT MODAL -->
 <div id="contactModal">
   <div class="modal-box">
     <button class="close-btn" onclick="closeModal()">×</button>
-    <h2>Contact StayBroker</h2>
 
+    <h2>Contact StayBroker</h2>
+    <p style="color:#666;">Connect directly with our team</p>
+
+    <!-- WHATSAPP -->
     <a href="https://wa.me/916363223446" target="_blank" class="whatsapp-btn">
       💬 Chat on WhatsApp
     </a>
 
+    <!-- CALL -->
     <a href="tel:+916363223446" class="call-link">
       📞 +91 63632 23446
     </a>
   </div>
 </div>
 
+<!-- SCRIPT -->
 <script>
-function openModal(){
-  document.getElementById('contactModal').style.display='grid';
-  document.body.style.overflow='hidden';
-}
-function closeModal(){
-  document.getElementById('contactModal').style.display='none';
-  document.body.style.overflow='';
-}
+  function openModal() {
+    document.getElementById('contactModal').style.display = 'grid';
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeModal() {
+    document.getElementById('contactModal').style.display = 'none';
+    document.body.style.overflow = '';
+  }
 </script>
 
 </body>
